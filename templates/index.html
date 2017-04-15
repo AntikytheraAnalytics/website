@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+{% block title %}Antikythera Group{% endblock %}
+{% block head %}
+  {{ super() }}
+	<script src="{{ url_for('static', filename='typed.js/js/typed.js')}}"></script>
+
+	<style>
+		a.anchor {
+			display: block;
+			position: relative;
+			top: -100px;
+			visibility: hidden;
+		}
+		.image_spacer {
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			background-repeat:no-repeat;
+			background-position: center center;
+		}
+		.typed-cursor{
+			opacity: 1;
+			-webkit-animation: blink 0.7s infinite;
+			-moz-animation: blink 0.7s infinite;
+			animation: blink 0.7s infinite;
+		}
+		@keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		@-webkit-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		@-moz-keyframes blink{
+			0% { opacity:1; }
+			50% { opacity:0; }
+			100% { opacity:1; }
+		}
+		.section {
+			min-height: 90vh;
+			margin-bottom:10vh;
+		}
+	</style>
+
+{% endblock %}
+
+{% block content %}
+	<div class='container-fluid'>
+		<div class='row section image_spacer' style='background-image: url("https://static.antikytheragroup.com/website/welcome/images/background/section1_b0b834ad539824f2c0758206e7f81a94d0295591.jpg");'>
+			<div class='col-md-6 col-md-offset-3'>
+				<h1 style='color: white; padding-top: 15vh;' class='text-center'><span id="prompt"></span></h1>
+				<h1 style='font-size:63px;color: #f94600;' class='text-center'>Delivered.</h1>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$("#prompt").typed({
+					strings: ["Project Feasibility", "Product Prototyping", "Data Ingestion", "Analytics", "Machine Learning"],
+					typeSpeed: 0
+				});
+			});
+		</script>
+		<a class='anchor' name='services'></a>
+		<div class='row section'>
+			<div class='col-md-12'>
+				<div class='page-header'>
+					<h1 class='text-center' style='font-size:48px;'>Services</h1>
+				</div>
+			</div>
+			<div class='clearfix'></div>
+			<div class='col-md-8 col-md-offset-2'>
+				<div class='page-header'>
+					<h2>
+						Data Ingestion and Management
+						<a href="#" class='hidden-xs pull-right btn btn-default'>More Information</a>
+					</h2>
+				</div>
+				<div class='row'>
+					<div class='col-sm-7'>
+						<p class='text-justified lead'>
+							Most data sets begin life in a raw format. In order to leverage this data 
+							at scale, it must be migrated to solutions which are able to rapidly answer
+							the questions that you want to ask. We can lend our experience to
+							architect a solution that is tailor made for your data set and analytics needs. 
+						</p>
+	
+						<a href="#" class='visible-xs center-block btn btn-default'>More Information</a>
+					</div>
+					<div class='col-sm-5 hidden-xs'>
+						<img class='img-responsive' src='https://static.antikytheragroup.com/website/welcome/images/detail/elephant_051144dcedb0d0fab05abc48b402083be348d823.jpg'></img>
+					</div>
+				</div>
+			</div>
+	
+			<div class='col-md-8 col-md-offset-2'>
+				<div class='page-header'>
+					<h2>
+						Data Exploration and Analytics
+						<a href="#" class='hidden-xs pull-right btn btn-default'>More Information</a>
+					</h2>
+				</div>
+				<div class='row'>
+					<div class='col-sm-5 hidden-xs'>
+						<img class='img-responsive' src='https://static.antikytheragroup.com/website/welcome/images/detail/exploration_5db3a421bd895f3a47e16e4a508a02620f139a38.jpg'></img>
+					</div>
+					<div class='col-sm-7'>
+						<p class='lead text-justify'>
+							It is important to get a sense of what information a new data set may provide. 
+							We dive down into the data, identify its strengths and weaknesses, and suggest 
+							promising avenues of inquiry.
+						</p>
+						<p class='lead text-justify'>
+							You may wish to answer specific questions using your data. 
+							We can provide rigorous answers with confidence bounds.
+						</p>
+						<a href="#" class='visible-xs center-block btn btn-default'>More Information</a>
+					</div>
+				</div>
+			</div>
+			<div class='col-md-8 col-md-offset-2'>
+				<div class='page-header'>
+					<h2>
+						Machine Learning
+						<a href="#" class='hidden-xs pull-right btn btn-default'>More Information</a>
+					</h2>
+				</div>
+				<div class='row'>
+					<div class='col-sm-7'>
+						<p class='lead text-justify'>
+							We go beyond statistical analysis to construct advanced models of your data.
+							These models can speed up decision making by classifying or clustering data points.
+							Our team can propose model architecture, perform training, 
+							and deploy the solution to where it matters the most.
+						</p>
+						<a href="#" class='visible-xs center-block btn btn-default'>More Information</a>
+					</div>
+					<div class='col-sm-5 hidden-xs'>
+						<img class='img-responsive' src='{{ url_for('static', filename='images/mnist.png')}}'></img>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='row section image_spacer' style='background-image: url("https://static.antikytheragroup.com/website/welcome/images/background/section2_89a26c7386bd01dc56d7d6211aa626d28ff9a54b.jpg");'>
+		</div>
+		<a class='anchor' name='team'></a>
+		<div class='row section'>
+			<div class='col-md-12'>
+				<div class='page-header'>
+					<h1 class='text-center' style='font-size:48px;'>Meet The Team</h1>
+				</div>
+			</div>
+	
+			<div class='clearfix'></div>
+			<div class='col-md-8 col-md-offset-2 col-sm-12'>
+				<div class='page-header'>
+					<h2>Kevin Flansburg</h2>
+				</div>
+				<div class='row'>
+					<div class='col-xs-4'>
+						<img class='img-responsive img-rounded' src='https://static.antikytheragroup.com/website/welcome/images/headshots/kevin_b7e2f31a5814058a5f21f820eedf1115ec19894e.jpg'></img>
+					</div>
+					<div class='col-xs-8'>
+						<p> 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							Pellentesque tincidunt erat et erat faucibus, id eleifend urna tincidunt. 
+							Proin euismod turpis non lacus congue suscipit. 
+							Nullam mollis sapien dui, vel imperdiet massa lobortis eget. 
+							Duis a pharetra nulla. Maecenas fermentum lectus justo, nec condimentum leo varius sed. 
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class='col-md-8 col-md-offset-2 col-sm-12'>
+				<div class='page-header'>
+					<h2>Joshua Howard</h2>
+				</div>
+				<div class='row'>
+					<div class='col-xs-4'>
+						<img class='img-responsive img-rounded' src='https://static.antikytheragroup.com/website/welcome/images/headshots/josh_c12f8f848d07e36197edd9ff9e268242d81efde4.jpg'></img>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='row section image_spacer' style='background-image: url("https://static.antikytheragroup.com/website/welcome/images/background/section3_9cf079a8f96271f48c6d586e52c5b22fdb979fe1.jpg");'>
+		</div>
+		<a class='anchor' name='about'></a>
+		<div class='row section'>
+			<div class='col-md-12'>
+				<div class='page-header'>
+					<h1 class='text-center' style='font-size:48px;'>About Antikythera</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
