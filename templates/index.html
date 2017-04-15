@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %}Antikythera Group{% endblock %}
+{% block title %}Home{% endblock %}
 {% block head %}
   {{ super() }}
 	<script src="{{ url_for('static', filename='typed.js/js/typed.js')}}"></script>
@@ -76,7 +76,7 @@
 				<div class='page-header'>
 					<h2>
 						Data Ingestion and Management
-						<a href="#" class='hidden-xs pull-right btn btn-default'>More Information</a>
+						<a href="/ingestion" class='hidden-xs pull-right btn btn-default'>More Information</a>
 					</h2>
 				</div>
 				<div class='row'>
@@ -88,7 +88,7 @@
 							architect a solution that is tailor made for your data set and analytics needs. 
 						</p>
 	
-						<a href="#" class='visible-xs center-block btn btn-default'>More Information</a>
+						<a href="/ingestion" class='visible-xs center-block btn btn-default'>More Information</a>
 					</div>
 					<div class='col-sm-5 hidden-xs'>
 						<img class='img-responsive' src='https://static.antikytheragroup.com/website/welcome/images/detail/elephant_051144dcedb0d0fab05abc48b402083be348d823.jpg'></img>
@@ -100,7 +100,7 @@
 				<div class='page-header'>
 					<h2>
 						Data Exploration and Analytics
-						<a href="#" class='hidden-xs pull-right btn btn-default'>More Information</a>
+						<a href="/exploration" class='hidden-xs pull-right btn btn-default'>More Information</a>
 					</h2>
 				</div>
 				<div class='row'>
@@ -117,7 +117,7 @@
 							You may wish to answer specific questions using your data. 
 							We can provide rigorous answers with confidence bounds.
 						</p>
-						<a href="#" class='visible-xs center-block btn btn-default'>More Information</a>
+						<a href="/exploration" class='visible-xs center-block btn btn-default'>More Information</a>
 					</div>
 				</div>
 			</div>
@@ -125,7 +125,7 @@
 				<div class='page-header'>
 					<h2>
 						Machine Learning
-						<a href="#" class='hidden-xs pull-right btn btn-default'>More Information</a>
+						<a href="/learning" class='hidden-xs pull-right btn btn-default'>More Information</a>
 					</h2>
 				</div>
 				<div class='row'>
@@ -136,7 +136,7 @@
 							Our team can propose model architecture, perform training, 
 							and deploy the solution to where it matters the most.
 						</p>
-						<a href="#" class='visible-xs center-block btn btn-default'>More Information</a>
+						<a href="/learning" class='visible-xs center-block btn btn-default'>More Information</a>
 					</div>
 					<div class='col-sm-5 hidden-xs'>
 						<img class='img-responsive' src='{{ url_for('static', filename='images/mnist.png')}}'></img>
