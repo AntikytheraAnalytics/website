@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}{{ meta['title'][0] if 'title' in meta else "Insights" }}{% endblock %}
+{% block head %}
+  {{ super() }}
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML'></script>
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
+{% block content %}
+	<div class='container-fluid'>
+        {% if 'image' in meta %}
+ 		    <div class='row section image_spacer align-items-center justify-content-center' style='background-image: url("{{ meta['image'][0] }}");'>
+		    	<div class='col-md-6 text-center'>
+		    		<h1 class='display-2 text-center'>{{ meta['title'][0] }}</h1>
+		    	</div>
+		    </div>
+        {% endif %}
+        
+        <div class='row section'>
+            <div class='col-12'>
+		        <div class='row justify-content-center subsection'>
+                    {% if not 'image' in meta %}
+        	            <div class='col-12'>
+		        	        <h1 class='display-3 text-center'>{{ meta['title'][0] }}</h1>
+                            <hr>
+		        	    </div>
+                    {% endif %}
+		        	<div class='col-12 col-sm-8'>
+                        {% if 'author' in meta %}
+                            <h1 class='d-inline'>{{ meta['author'][0] }}</h1>
+                        {% endif %}
+                        {% if 'date' in meta %}
+                            <h4 class='float-right'><small>{{ meta['date'][0] }}</small></h4>
+                        {% endif %}
+                        <hr> 
+                        {{ content|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+{% endblock %}

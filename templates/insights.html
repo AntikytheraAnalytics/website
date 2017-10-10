@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Insights{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+	<div class='container-fluid'>
+ 		<div class='row section image_spacer align-items-center justify-content-center' style='background-image: url("https://static.antikytheragroup.com/website/welcome/images/background/section3_9cf079a8f96271f48c6d586e52c5b22fdb979fe1.jpg");'>
+			<div class='col-md-6 text-center'>
+				<h1 class='display-2 text-center'>Insights</h1>
+			</div>
+		</div>
+  
+        <div class='row section'>
+            <div class='col-12'>
+		        <div class='row justify-content-center subsection'>
+        	        <!-- <div class='col-12'>
+		        	    <h1 class='display-3 text-center'>Articles</h1>
+                        <hr>
+		        	</div> -->
+		        	<div class='col-12 col-lg-8'>
+                        <div class='row'>
+                            {% for path, meta in articles.iteritems() %}
+                                <div class='col-12 col-md-4 mb-3'>
+                                    <div class="card">
+                                      {% if 'image' in meta %}
+                                          <img class="card-img-top" src="{{ meta['image'][0]}}"></img>
+                                      {% endif %}
+                                      <div class="card-body">
+                                        <h4><a href='/insights/{{ path }}' class="card-title">
+                                            {{ meta['title'][0] if 'title' in meta else path.replace("-"," ").title() }}
+                                        </a></h4>
+                                        {% if 'author' in meta %}
+                                            <h6 class="card-subtitle mb-2 text-muted">{{ meta['author'][0] }}</h6>
+                                        {% endif %}
+                                        {% if 'summary' in meta %}
+                                            <p class="card-text">
+                                                {{ meta['summary'][0] }}
+                                            </p>
+                                        {% endif %}
+                                        {% if 'date' in meta %}
+                                            <p class="card-text text-right"><small class="text-muted">Posted {{ meta['date'][0] }}</small></p>
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+{% endblock %}
