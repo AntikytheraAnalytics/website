@@ -1,0 +1,13 @@
+name: antikythera-website
+description: Deployment of our static marketing site. 
+version: 0.0.1
+keywords:
+  - http
+  - nginx
+  - www
+  - web
+  - gunicorn
+home: https://gitlab.com/kflansburg/antikythera-website
+maintainers:
+  - name: kflansburg
+    email: kflansburg@antikytheragroup.com
