@@ -1,20 +1,16 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential nodejs npm git
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-COPY . /app
-WORKDIR /app
+FROM gliderlabs/alpine:3.3
 
-RUN npm install -g grunt-cli
-WORKDIR /app/static/bootstrap-3.3.7/
-RUN npm install; exit 0
-RUN grunt dist
+RUN apk add --update python py-pip
 
-WORKDIR /app/static
-RUN rm -rf typed.js
-RUN git clone https://github.com/mattboldt/typed.js.git
-
+COPY requirements.txt /app/
 WORKDIR /app
 RUN pip install -r requirements.txt
+
+
+COPY app.py /app/
+COPY static/images /app/static/images
+COPY templates /app/templates
+COPY static/bootstrap-4.0.0-beta/dist/css/bootstrap.min.css /app/static/bootstrap-4.0.0-beta/dist/css/
+
 ENTRYPOINT ["python"]
 CMD ["app.py"]
